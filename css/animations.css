@@ -16,7 +16,7 @@
   -webkit-animation: fadeIn 1s ease-out;
   -moz-animation: fadeIn 1s ease-out;
   -o-animation: fadeIn 1s ease-out;
-  animation: fadeIn 2s ease-out;
+  animation: fadeIn 3s ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
+  animation-delay: 0s;
 }
