@@ -1,0 +1,79 @@
+{
+    "name": "René Vandamme",
+    "short_name": "Rene",
+    "lang": "en-US",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#011627",
+    "theme_color": "#011627",
+    "description": "René Vandamme's portfolio page.",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "img/maskable_icon_x36.webp",
+            "sizes": "36x36",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "img/maskable_icon_x48.webp",
+            "sizes": "48x48",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "img/maskable_icon_x72.webp",
+            "sizes": "72x72",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "img/maskable_icon_x96.webp",
+            "sizes": "96x96",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "img/maskable_icon_x144.webp",
+            "sizes": "144x144",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "img/maskable_icon_x192.webp",
+            "sizes": "192x192",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "img/maskable_icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Projects",
+            "url": "/#page-3",
+            "description": "A list of projects I made.",
+            "icons": [
+                {
+                    "src": "img/maskable_icon_x192.webp",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "Contact Me",
+            "url": "/#page-5",
+            "description": "Contact form.",
+            "icons": [
+                {
+                    "src": "img/maskable_icon_x192.webp",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ]
+}

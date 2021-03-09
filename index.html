@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#011627">
+  <meta name="Description" content="René Vandamme, web developer, portfolio site.">
+  <title>René Vandamme</title>
+
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+  <link rel="apple-touch-icon" href="/img/apple_touch_icon.png">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Technique to load Google Fonts async fast see: https://csswizardry.com/2020/05/the-fastest-google-fonts/ -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@900&family=Montserrat:wght@600&display=swap">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@900&family=Montserrat:wght@600&display=swap"
+    media="print" onload="this.media='all'">
+
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@900&family=Montserrat:wght@600&display=swap" />
+  </noscript>
+
+  <!-- Reset CSS Async -->
+  <link rel="preload" href="./css/min/destyle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="./css/min/destyle.min.css">
+  </noscript>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/min/style.min.css" type="text/css">
+
+  <!-- Pageable CSS Async -->
+  <link rel="preload" href="./css/min/pageable.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="./css/min/pageable.min.css">
+  </noscript>
+
+  <!-- Animations CSS Async -->
+  <link rel="preload" href="./css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="./css/animations.css">
+  </noscript>
+
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+  <script src="./src/pageable/pageable.min.js" defer></script>
+  <script src="./src/index.min.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div id="container">
+      <section data-anchor="Page 1" id="introduction-section">
+        <div class="section-inner">
+          <div class="section-content">
+            <div class="section-introduction">
+              <div class="section-introduction-text" id="intro-text">
+                <h1>René<br>Vandamme</h1>
+                <h2>Web developer in the making.</h2>
+              </div>
+              <div class="person" id="person">
+                <div class="profile-pic-container">
+                  <div class="profile-pic-container-inner">
+                    <img class="background" src="./img/background.webp" width="380" height="380"
+                      srcset="./img/background.webp 512w, ./img/background-sm.webp 256w"
+                      sizes="(max-width: 600px) 256px, 512px" alt="background bricks">
+                    <img class="img" src="./img/rene.webp" width="450" height="450" alt="rene's profile picture">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <section data-anchor="Page 2" id="about-me-section">
+        <div class="section-inner">
+          <h2>About me</h2>
+          <div class="section-content">
+            <div class="section-about-me">
+              <p>Hello!</p>
+              <p>My name is René and I'm a developer at heart.</p>
+              <p>Fascinated by technology at a young age, I got my first computer when I was six years old.
+                At the age of 9 I started programming with SuperLogo a programming tool for kids.
+                Later I started my bachelor in Digital Arts and Entertainment,
+                I was drawn by the creativity in creating games.</p>
+              <p>After my studies, I got an internship at Around Media where I eventually worked full time for
+                three years as a C++ developer. </p>
+              <p>Now I'm looking for a new adventure, moving into the world of web development.
+                I am a logical thinker and a born problem solver.
+                Always ready to tackle the next challenge!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section data-anchor="Page 3" id="projects-section">
+        <div class="section-inner">
+          <h2>Projects</h2>
+          <div class="section-content">
+            <div class="cards-container custom-scrollbar">
+              <div class="card">
+                <div>
+                  <a href="https://renv123.github.io/js-blackjack-card-game/">
+                    <img class="card-img" src="./img/blackjack.jpg" width="300" height="200" alt="blackjack">
+                  </a>
+                </div>
+                <div class="card-content">
+                  <h3>Blackjack Game</h3>
+                  <p>
+                    A first exercise in experimenting with Javascript, sounds and animations.
+                  </p>
+                  <div class="card-icon-container">
+                    <a href="https://renv123.github.io/js-blackjack-card-game/">
+                      <img class="link-img" src="./img/link.svg" width="64" height="64" alt="link icon">
+                    </a>
+                    <a href="https://github.com/RenV123/js-blackjack-card-game">
+                      <img class="github-img" src="./img/github.svg" width="64" height="64" alt="github icon">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div>
+                  <a href="https://weather-app.renv123.vercel.app/">
+                    <img class="card-img" src="./img/weather.jpg" width="300" height="200" alt="weather app">
+                  </a>
+                </div>
+                <div class="card-content">
+                  <h3>Weather site</h3>
+                  <div>
+                    <p>
+                      <br>
+                      A weather site met with JS.
+                      <br>For this I used OpenWeatherMap, OpenCageDataApi and Unsplash API
+                    </p>
+                    <p>to retrieve a picture and the weather info based on the location of the user.
+                      I also experimented with serverless functions using Vercel.
+                    </p>
+                  </div>
+                  <div class="card-icon-container">
+                    <a href="https://weather-app.renv123.vercel.app/">
+                      <img class="link-img" src="./img/link.svg" width="64" height="64" alt="link icon">
+                    </a>
+                    <a href="https://github.com/RenV123/weather-app">
+                      <img class="github-img" src="./img/github.svg" width="64" height="64" alt="github icon">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div>
+                  <a href="#">
+                    <img class="card-img" src="./img/background.webp" width="300" height="200" alt="background">
+                  </a>
+                </div>
+                <div class="card-content">
+                  <h3>More coming soon...</h3>
+                  <div>
+                    <p>More coming soon...
+                    </p>
+                  </div>
+                  <div class="card-icon-container">
+                    <a href="#">
+                      <img class="link-img" src="./img/link.svg" width="64" height="64" alt="link icon">
+                    </a>
+                    <a href="#">
+                      <img class="github-img" src="./img/github.svg" width="64" height="64" alt="github icon">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div>
+                  <a href="#">
+                    <img class="card-img" src="./img/background.webp" width="300" height="200" alt="background">
+                  </a>
+                </div>
+                <div class="card-content">
+                  <h3>More coming soon...</h3>
+                  <div>
+                    <p>More coming soon...
+                    </p>
+                  </div>
+                  <div class="card-icon-container">
+                    <a href="#">
+                      <img class="link-img" src="./img/link.svg" width="64" height="64" alt="link icon">
+                    </a>
+                    <a href="#">
+                      <img class="github-img" src="./img/github.svg" width="64" height="64" alt="github icon">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section data-anchor="Page 4" id="skills-section">
+        <div class="section-inner">
+          <h2>My Skills</h2>
+          <div class="section-content">
+            <div class="skills-grid">
+              <img src="./img/skills-icons/html5.webp"
+                srcset="./img/skills-icons/html5.webp 512w, ./img/skills-icons/html5-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="HTML 5 icon">
+              <img src="./img/skills-icons/css3.webp"
+                srcset="./img/skills-icons/css3.webp 512w, ./img/skills-icons/css3-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="CSS 3 icon">
+              <img src="./img/skills-icons/sass.webp"
+                srcset="./img/skills-icons/sass.webp 512w, ./img/skills-icons/sass-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="Sass icon">
+              <img src="./img/skills-icons/bootstrap.webp"
+                srcset="./img/skills-icons/bootstrap.webp 512w, ./img/skills-icons/bootstrap-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="Bootstrap icon">
+              <img src="./img/skills-icons/javascript.webp"
+                srcset="./img/skills-icons/javascript.webp 512w, ./img/skills-icons/javascript-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="Javascript icon">
+              <img src="./img/skills-icons/cpp.webp"
+                srcset="./img/skills-icons/cpp.webp 512w, ./img/skills-icons/cpp-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="C++ icon">
+              <img src="./img/skills-icons/python.webp"
+                srcset="./img/skills-icons/python.webp 512w, ./img/skills-icons/python-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="Python icon">
+              <img src="./img/skills-icons/git.webp"
+                srcset="./img/skills-icons/git.webp 512w, ./img/skills-icons/git-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="Git Icon">
+              <img src="./img/skills-icons/jenkins.webp"
+                srcset="./img/skills-icons/jenkins.webp 512w, ./img/skills-icons/jenkins-sm.webp 256w"
+                sizes="(max-width: 600px) 256px, 512px" width="256" height="256" alt="Jenkins Icon">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section data-anchor="Page 5" id="contact-section">
+        <div class="section-inner">
+          <h2>Contact me</h2>
+          <div class="section-content flex-col">
+            <form class="contact-form" action="https://app.99inbound.com/api/e/rzuIwlDL" method="POST" target="_blank">
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Name">
+              <input type="email" id="email" inputmode="email" autocomplete="email" name="email" placeholder="Email">
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+              <textarea type="text" id="message" name="message" placeholder="Message"></textarea>
+              <div style="position: absolute; left: -5000px;">
+                <input type="checkbox" name="incredible_ultraviolet_fractal_ant" value="1" tabindex="-1"
+                  autocomplete="no">
+              </div>
+              <input type="submit" value="SEND MESSAGE">
+            </form>
+            <div class="contact-links">
+              <a href="https://github.com/renv123">
+                <img class="github-img" src="./img/github.svg" width="64" height="64" alt="github icon">
+                <p>Github</p>
+              </a>
+              <a href="mailto:1c4aakd3j@relay.firefox.com">
+                <img class="email-img" src="./img/email.svg" width="64" height="64" alt="email icon">
+                <p>Email</p>
+              </a>
+              <a href="https://www.linkedin.com/in/vrene1515">
+                <img class="linkedin-img" src="./img/in.svg" width="64" height="64" alt="linkedin icon">
+                <p>LinkedIn</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>
