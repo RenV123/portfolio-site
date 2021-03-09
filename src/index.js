@@ -36,11 +36,17 @@ new Pageable('#container', {
     keydown: true, // enable / disable keyboard navigation
   },
   onInit: function () {
-    const introText = document.getElementById('intro-text');
-    introText.classList.add('fade');
+    const imgBackgroundLoader = new Image();
 
-    const person = document.getElementById('person');
-    person.classList.add('grow');
+    imgBackgroundLoader.onload = (event) => {
+      const introText = document.getElementById('intro-text');
+      introText.classList.add('fade');
+
+      const person = document.getElementById('person');
+      person.classList.add('grow');
+    };
+
+    imgBackgroundLoader.src = './img/rene.webp';
   },
 });
 

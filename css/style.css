@@ -182,7 +182,6 @@ section {
   height: 100%;
 
   /*Compensate for height of h3 title to center content*/
-  margin-bottom: calc((var(--h3-size) + var(--header-margin-h)) * 2);
   margin-bottom: min(8vh, calc((var(--h3-size) + var(--header-margin-h)) * 2));
 
   /* overflow: scroll; */
