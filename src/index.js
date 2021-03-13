@@ -24,10 +24,9 @@ if ('serviceWorker' in navigator) {
 const downBtn = document.getElementById('btn-down');
 
 const pageable = new Pageable('#container', {
-  childSelector: '[data-anchor]', // CSS3 selector string for the pages
-  anchors: [], // define the page anchors
+  childSelector: 'section', // CSS3 selector string for the pages
   pips: true, // display the pips
-  animation: 500, // the duration in ms of the scroll animation
+  animation: 400, // the duration in ms of the scroll animation
   freeScroll: false,
   swipeThreshold: 20,
   events: {
@@ -41,17 +40,11 @@ const pageable = new Pageable('#container', {
       downBtn.style.display = 'none';
     }
 
-    const imgBackgroundLoader = new Image();
+    const introText = document.getElementById('intro-text');
+    introText.classList.add('fade');
 
-    imgBackgroundLoader.onload = (event) => {
-      const introText = document.getElementById('intro-text');
-      introText.classList.add('fade');
-
-      const person = document.getElementById('person');
-      person.classList.add('grow');
-    };
-
-    imgBackgroundLoader.src = './img/rene.webp';
+    const person = document.getElementById('person');
+    person.classList.add('grow');
   },
 
   onFinish: (data) => {

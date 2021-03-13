@@ -392,6 +392,7 @@ if (!Element.prototype.closest) {
         prev: this.prev.bind(this),
         next: this.next.bind(this),
         keydown: this._keydown.bind(this),
+        hashChanged: this._locationHashChanged.bind(this),
       };
       document.addEventListener('keydown', this.callbacks.keydown, false);
       this.wrapper.addEventListener('wheel', this.callbacks.wheel, false);
@@ -411,6 +412,7 @@ if (!Element.prototype.closest) {
         this.callbacks.stop,
         false
       );
+      window.addEventListener('hashchange', this.callbacks.hashChanged, false);
 
       if (this.navPrevEl) {
         this.navPrevEl.addEventListener('click', this.callbacks.prev, false);
@@ -440,6 +442,8 @@ if (!Element.prototype.closest) {
         this.touch ? 'touchend' : 'mouseup',
         this.callbacks.stop
       );
+      window.removeEventListener('hashchange', this.callbacks.hashChanged);
+
       document.removeEventListener('keydown', this.callbacks.keydown);
 
       if (this.navPrevEl) {
@@ -1284,6 +1288,20 @@ if (!Element.prototype.closest) {
             pip.firstElementChild.classList.remove('active');
           }
         });
+      }
+    };
+
+    /**
+     * On hash changed
+     */
+    Pageable.prototype._locationHashChanged = function () {
+      if (this.config.pips) {
+        var id = location.hash;
+
+        if (id) {
+          this.index = this.anchors.indexOf(id);
+          this._setPips(this.index);
+        }
       }
     };
 
