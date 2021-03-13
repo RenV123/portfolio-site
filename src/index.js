@@ -1,7 +1,6 @@
 'use strict';
 
 // register service worker
-
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('./src/service-worker.js', {
@@ -22,7 +21,9 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-new Pageable('#container', {
+const downBtn = document.getElementById('btn-down');
+
+const pageable = new Pageable('#container', {
   childSelector: '[data-anchor]', // CSS3 selector string for the pages
   anchors: [], // define the page anchors
   pips: true, // display the pips
@@ -35,7 +36,11 @@ new Pageable('#container', {
     touch: true, // enable / disable touch / swipe scrolling
     keydown: true, // enable / disable keyboard navigation
   },
-  onInit: function () {
+  onInit: (data) => {
+    if (data.index !== 0) {
+      downBtn.style.display = 'none';
+    }
+
     const imgBackgroundLoader = new Image();
 
     imgBackgroundLoader.onload = (event) => {
@@ -48,6 +53,24 @@ new Pageable('#container', {
 
     imgBackgroundLoader.src = './img/rene.webp';
   },
+
+  onFinish: (data) => {
+    downBtn.style.display = data.index === 0 ? 'flex' : 'none';
+  },
+});
+
+downBtn.onclick = () => {
+  pageable.next();
+};
+
+/*Add a hover effect with the color of the image */
+Array.from(document.querySelectorAll('.skills-grid a img')).forEach((img) => {
+  img.addEventListener('mouseenter', (e) => {
+    img.style.filter = `drop-shadow(0 0px 12px #${img.dataset.hoverColor})`;
+  });
+  img.addEventListener('mouseleave', (e) => {
+    img.style.filter = `none`;
+  });
 });
 
 var flickity = new Flickity('.cards-container', {

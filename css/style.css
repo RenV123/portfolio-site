@@ -23,6 +23,8 @@ Variables
   --header-margin-h: 1rem;
 
   --max-content-size: 800px;
+
+  --shadow: 0 0px 12px rgba(255, 255, 255, 0.5);
 }
 
 /*
@@ -210,6 +212,41 @@ section {
   font-size: min(var(--h2-size), 7vw);
 }
 
+.section-down-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.down-btn {
+  position: fixed;
+  bottom: 100px;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  left: calc(50% - 25px);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.down-btn:hover {
+  box-shadow: var(--shadow);
+}
+
+.contact-links a img:hover {
+  filter: drop-shadow(var(--shadow));
+}
+
+.down-btn img {
+  transform: scale(0.7);
+}
+
 .section-about-me {
   text-align: left;
   width: min(100%, var(--max-content-size));
@@ -364,6 +401,24 @@ Skills grid
 .skills-grid img {
   width: min(100%, 20vh);
   height: auto;
+  transition-timing-function: ease-in-out;
+  transition: 0.75s;
+  transition-property: transform, filter;
+}
+
+.skills-grid img:hover {
+  transform: scale(1.1);
+}
+
+.skills-grid:hover img:not(:hover) {
+  transition-timing-function: ease-in-out;
+  transition: 0.75s;
+  transition-property: transform;
+  transform: scale(0.9);
+}
+
+.skills-grid:hover a:not(:hover) {
+  filter: none;
 }
 
 /* 
@@ -414,6 +469,10 @@ Contact form
 .contact-form input:focus:not(.contact-form input[type='submit']),
 .contact-form textarea:focus {
   border-color: hsl(207, 10%, 47%);
+}
+
+.contact-form input[type='submit']:hover {
+  box-shadow: 0 0px 12px var(--secondary-accent-color);
 }
 
 .contact-form textarea {
