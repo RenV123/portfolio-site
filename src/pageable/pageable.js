@@ -404,7 +404,7 @@ if (!Element.prototype.closest) {
       window.addEventListener(
         this.touch ? 'touchmove' : 'mousemove',
         this.callbacks.drag,
-        false
+        { passive: false }
       );
       window.addEventListener(
         this.touch ? 'touchend' : 'mouseup',
@@ -809,19 +809,6 @@ if (!Element.prototype.closest) {
         return false;
       }
 
-      //RenV123_EDIT_START
-      // Quick attempt to fix the issue that forms can't be selected.
-      if (
-        e.target.tagName !== 'INPUT' &&
-        e.target.tagName !== 'TEXTAREA' &&
-        e.target.tagName !== 'BUTTON' &&
-        e.target.tagName !== 'ANCHOR' &&
-        e.target.tagName !== 'IMG'
-      ) {
-        this._preventDefault(e);
-      }
-      //RenV123_EDIT_END
-
       this.dragging = this.config.freeScroll; // suspend slideshow
 
       if (this.config.slideshow) {
@@ -842,6 +829,7 @@ if (!Element.prototype.closest) {
      * @return {Bool}
      */
     Pageable.prototype._drag = function (e) {
+      e.preventDefault();
       if (this.config.freeScroll && this.dragging && !this.scrolling) {
         var evt = this._getEvent(e);
 
