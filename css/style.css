@@ -394,8 +394,6 @@ Skills grid
   align-content: center;
   row-gap: 1rem;
   column-gap: 1rem;
-  height: 100%;
-  width: min(100%, var(--max-content-size));
 }
 
 .skills-grid img {
@@ -415,10 +413,6 @@ Skills grid
   transition: 0.75s;
   transition-property: transform;
   transform: scale(0.9);
-}
-
-.skills-grid:hover a:not(:hover) {
-  filter: none;
 }
 
 /* 
