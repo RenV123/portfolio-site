@@ -1120,8 +1120,6 @@ if (!Element.prototype.closest) {
               }, that);
               that.slideIndex = that.index;
 
-              that._setPips();
-
               that._setNavs();
 
               that.config.onFinish.call(that, data); // emit "scroll.end" event
@@ -1292,15 +1290,16 @@ if (!Element.prototype.closest) {
     };
 
     /**
-     * On hash changed
+     * On hash(url) changed
      */
     Pageable.prototype._locationHashChanged = function () {
       if (this.config.pips) {
-        var id = location.hash;
+        let id = location.hash;
 
         if (id) {
           this.index = this.anchors.indexOf(id);
           this._setPips(this.index);
+          this.scrollToIndex(this.index);
         }
       }
     };
