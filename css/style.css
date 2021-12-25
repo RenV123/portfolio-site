@@ -424,7 +424,6 @@ Contact form
 .contact-links {
   display: flex;
   justify-content: flex-end;
-  margin-top: auto;
   margin-bottom: 1rem;
 }
 .contact-links a {
